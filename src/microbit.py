@@ -35,6 +35,11 @@ class Microbit:
                 pygame.quit()
                 sys.exit()
 
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_ESCAPE]:
+            pygame.quit()
+            sys.exit()
+
     def draw(self):
         """
         Draw pixel array to be called every frame
