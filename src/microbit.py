@@ -1,7 +1,5 @@
 import sys
 
-import numpy
-
 import pygame
 
 COLOURS = (
@@ -30,7 +28,7 @@ class Microbit:
 
     def events(self):
         """
-        Main
+        Poll events to be called every frame
         """
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -39,7 +37,7 @@ class Microbit:
 
     def draw(self):
         """
-        Draw pixel array
+        Draw pixel array to be called every frame
         """
         self.WIN.fill(BLACK)
         for i in range(5):
@@ -49,18 +47,3 @@ class Microbit:
                 led.set_alpha((255/9) * self.led_array[j][i])
                 self.WIN.blit(led, (i*50, j*50))
         pygame.display.flip()
-    
-if __name__ == "__main__":
-    mb = Microbit()
-    running = True
-    while running:
-        mb.led_array = [
-            [0,9,0,9,0],
-            [0,9,0,9,0],
-            [0,0,3,0,0],
-            [9,0,3,0,9],
-            [0,9,9,9,0]
-        ]
-
-        mb.events()
-        mb.draw()
