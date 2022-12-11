@@ -23,6 +23,17 @@ if __name__ == "__main__":
         mb.draw()
         time.sleep(1)
 
+        mb.led_array = [
+            [0,2,4,6,8],
+            [0,2,4,6,8],
+            [0,2,4,6,8],
+            [0,2,4,6,8],
+            [0,2,4,6,8]
+        ]
+        mb.draw()
+        time.sleep(1)
+
+
         mb.led_array = pt.BLANK
         mb.draw()
         time.sleep(1)
