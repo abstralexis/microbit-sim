@@ -49,6 +49,6 @@ class Microbit:
             for j in range(5):
                 led = pygame.Surface((50, 50))
                 led.fill(RED)
-                led.set_alpha((255/9) * self.led_array[j][i])
+                led.set_alpha((255//9) * self.led_array[j][i])
                 self.WIN.blit(led, (i*50, j*50))
         pygame.display.flip()
